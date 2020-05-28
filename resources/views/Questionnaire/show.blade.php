@@ -8,6 +8,7 @@
                 <div class="card-header">{{$questionnaire->title}}</div>
 
                 <div class="card-body">
+                    <a class="btn btn-dark" href="{{route('question.create', $questionnaire->id)}}">Create New Question</a>
 
                 </div>
             </div>

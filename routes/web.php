@@ -25,4 +25,7 @@ Route::get('/questionnaire/create', 'QuestionnaireController@create')->name('que
 Route::post('/questionnaire/store', 'QuestionnaireController@store')->name('questionnaire.store');
 Route::get('/questionnaire/show/{questionnaire}', 'QuestionnaireController@show')->name('questionnaire.show');
 
+Route::get('/questionnaires/{questionnaire}/question/create', 'QuestionController@create')->name('question.create');
+Route::post('/questionnaires/{questionnaire}/question/create', 'QuestionController@store')->name('question.store');
+
 
