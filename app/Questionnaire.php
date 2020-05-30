@@ -20,7 +20,7 @@ class Questionnaire extends Model
         return $this->hasMany(Survey::class);
     }
 
-    public function response(){
+    public function responses(){
         return $this->hasMany(SurveyResponse::class);
     }
 }

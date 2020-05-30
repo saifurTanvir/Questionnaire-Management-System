@@ -20,8 +20,15 @@
                     <div class="card-body">
                         <ul class="list-group">
                             @foreach($question->answers as $answer)
-                                <li class="list-group-item">{{$answer->answer}}</li>
+                                <li class="list-group-item  d-flex justify-content-lg-between">{{$answer->answer}}
+                                    @if($question->response->count())
+                                        <div>{{(int)(($answer->response->count() * 100) / $question->response->count() )}}%</div>
+                                    @endif
+                                </li>
                             @endforeach
+                                <a class="btn btn-sm btn-outline-primary">Edit</a>
+                                <a class="btn btn-sm btn-outline-danger" href="{{route('question.delete', [$questionnaire->id,$question->id])}}">Delete</a>
+
                         </ul>
                     </div>
                 </div>

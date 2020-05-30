@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Question;
 use App\Questionnaire;
 use Illuminate\Http\Request;
 
@@ -33,7 +34,12 @@ class QuestionnaireController extends Controller
 
     public function show(Questionnaire $questionnaire){
         $questionnaire->load('questions.answers');
-        //dd($questionnaire);
         return view('questionnaire.show', compact('questionnaire'));
+    }
+
+    public function delete(Questionnaire $questionnaire, Question $question){
+        $question->answers()->delete();
+        $question->delete();
+        return redirect()->route('questionnaire.show', $questionnaire->id);
     }
 }

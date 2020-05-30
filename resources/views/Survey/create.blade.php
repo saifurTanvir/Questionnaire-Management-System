@@ -44,7 +44,7 @@
                         <div class="card-body">
                                 <div class="form-group">
                                     <label for="nameHelp">Name</label>
-                                    <input type="text" name="survey[name]" class="form-control" id="title" value="{{old('name')}}" aria-describedby="nameHelp" placeholder="Enter Name">
+                                    <input type="text" name="survey[name]" class="form-control" id="title" value="{{old('survey.name')}}" aria-describedby="nameHelp" placeholder="Enter Name">
                                     <small id="nameHelp" class="form-text text-muted">Hello! what's your name?</small>
                                     <div class="text-danger">
                                         @error('survey.name')
@@ -55,7 +55,7 @@
 
                                 <div class="form-group">
                                     <label for="emailHelp">Email</label>
-                                    <input type="email" name="survey[email]" class="form-control" id="email" value="{{old('email')}}" aria-describedby="emailHelp" placeholder="Enter Email">
+                                    <input type="email" name="survey[email]" class="form-control" id="email" value="{{old('survey.email')}}" aria-describedby="emailHelp" placeholder="Enter Email">
                                     <small id="emailHelp" class="form-text text-muted">Give your email please! </small>
                                     <div class="text-danger">
                                         @error('survey.email')
