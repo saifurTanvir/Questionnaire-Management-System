@@ -24,7 +24,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/questionnaire/create', 'QuestionnaireController@create')->name('questionnaire.create');
 Route::post('/questionnaire/store', 'QuestionnaireController@store')->name('questionnaire.store');
 Route::get('/questionnaire/show/{questionnaire}', 'QuestionnaireController@show')->name('questionnaire.show');
-Route::get('/questionnaire/{questionnaire}/question/{question}', 'QuestionnaireController@delete')->name('question.delete');
+
+Route::get('/questionnaire/{questionnaire}/question/{question}', 'QuestionController@edit')->name('question.edit');
+Route::patch('/questionnaire/{questionnaire}/question/{question}', 'QuestionController@update')->name('question.update');
+Route::delete('/questionnaire/{questionnaire}/question/{question}', 'QuestionController@delete')->name('question.delete');
 
 
 Route::get('/questionnaires/{questionnaire}/question/create', 'QuestionController@create')->name('question.create');

@@ -4,6 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
+            <div class="alert-info">{{session('updateQuestion')}}</div>
             <div class="card">
                 <div class="card-header">{{$questionnaire->title}}</div>
 
@@ -26,8 +27,20 @@
                                     @endif
                                 </li>
                             @endforeach
-                                <a class="btn btn-sm btn-outline-primary">Edit</a>
-                                <a class="btn btn-sm btn-outline-danger" href="{{route('question.delete', [$questionnaire->id,$question->id])}}">Delete</a>
+
+                            <div class="mt-4 d-flex justify-content-lg-between">
+
+                                <a href="{{route('question.edit', [$questionnaire->id,$question->id])}}" class="btn btn-sm btn-outline-primary ">Edit</a>
+
+
+                                <form  method="POST" action="{{route('question.delete', [$questionnaire->id,$question->id])}}">
+                                    @method('DELETE')
+                                    @csrf
+                                    <button type="submit" class="btn btn-sm btn-outline-danger align-content-end">Delete</button>
+                                </form>
+                            </div>
+
+
 
                         </ul>
                     </div>

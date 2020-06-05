@@ -37,9 +37,5 @@ class QuestionnaireController extends Controller
         return view('questionnaire.show', compact('questionnaire'));
     }
 
-    public function delete(Questionnaire $questionnaire, Question $question){
-        $question->answers()->delete();
-        $question->delete();
-        return redirect()->route('questionnaire.show', $questionnaire->id);
-    }
+
 }
